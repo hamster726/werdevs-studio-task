@@ -1,7 +1,7 @@
 const Calendar = () => {
   const dayInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-  const generateCalendar = (date) => {
+  const renderMonth = (date) => {
     const curDay = date.getDate();
     date.setDate(1);
     const startDay = date.getDay();
@@ -10,6 +10,14 @@ const Calendar = () => {
         ? 29
         : dayInMonth[date.getMonth()];
   };
+
+  const renderWeek = () => {
+
+  }
+
+  const renderDay = () => {
+
+  }
 
   return (
     <>
@@ -21,18 +29,64 @@ const Calendar = () => {
         </div>
         <div className="separator" />
         <div className="calendar__grid">
+          <div className="calendar__week">
+            <div className="calendar__day">1</div>
+            <div className="calendar__day">2</div>
+            <div className="calendar__day">3</div>
+            <div className="calendar__day">4</div>
+            <div className="calendar__day">5</div>
+            <div className="calendar__day">6</div>
+            <div className="calendar__day">7</div>
+          </div>
+          <div className="calendar__week">
+            <div className="calendar__day">1</div>
+            <div className="calendar__day">2</div>
+            <div className="calendar__day">3</div>
+            <div className="calendar__day">4</div>
+            <div className="calendar__day">5</div>
+            <div className="calendar__day">6</div>
+            <div className="calendar__day">7</div>
+          </div>
+          <div className="calendar__week">
+            <div className="calendar__day">1</div>
+            <div className="calendar__day">2</div>
+            <div className="calendar__day">3</div>
+            <div className="calendar__day">4</div>
+            <div className="calendar__day">5</div>
+            <div className="calendar__day">6</div>
+            <div className="calendar__day">7</div>
+          </div>
+          <div className="calendar__week">
+            <div className="calendar__day">1</div>
+            <div className="calendar__day">2</div>
+            <div className="calendar__day">3</div>
+            <div className="calendar__day">4</div>
+            <div className="calendar__day">5</div>
+            <div className="calendar__day">6</div>
+            <div className="calendar__day">7</div>
+          </div>
+          <div className="calendar__week">
+            <div className="calendar__day">1</div>
+            <div className="calendar__day">2</div>
+            <div className="calendar__day">3</div>
+            <div className="calendar__day">4</div>
+            <div className="calendar__day">5</div>
+            <div className="calendar__day">6</div>
+            <div className="calendar__day">7</div>
+          </div>
+
 
 
         </div>
         <div className="separator" />
-        <div className="calendar__weeks">
-          <span className="calendar__week">S</span>
-          <span className="calendar__week">M</span>
-          <span className="calendar__week">T</span>
-          <span className="calendar__week">W</span>
-          <span className="calendar__week">T</span>
-          <span className="calendar__week">F</span>
-          <span className="calendar__week">S</span>
+        <div className="calendar__day-names">
+          <span className="calendar__day-name">S</span>
+          <span className="calendar__day-name">M</span>
+          <span className="calendar__day-name">T</span>
+          <span className="calendar__day-name">W</span>
+          <span className="calendar__day-name">T</span>
+          <span className="calendar__day-name">F</span>
+          <span className="calendar__day-name">S</span>
         </div>
         <div className="separator" />
       </div>
