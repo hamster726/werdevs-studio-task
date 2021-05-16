@@ -1,0 +1,39 @@
+.header {
+  display: flex;
+  align-items: flex-end;
+
+  padding: 50px 110px;
+  &__logo {
+  }
+
+  .navigation {
+    margin-left: auto;
+    a {
+      position: relative;
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: 0.56px;
+      color: #3D3D3D;
+      margin-left: 70px;
+      text-transform: uppercase;
+    }
+  }
+}
+
+.active {
+  &:after {
+    position: absolute;
+
+    display: block;
+    content: "";
+
+    width: 14px;
+    height: 14px;
+
+    background-color: $yellow-color;
+    bottom: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 100%;
+  }
+}
