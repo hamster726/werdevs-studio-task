@@ -3,6 +3,8 @@
 
   .main {
     flex-direction: column;
+    background: url("/img/background.png") 0/cover no-repeat;
+
 
     &__text-container {
       width: initial;
