@@ -2,7 +2,7 @@ import {useState} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {addDateToList, updateCurrentMonth} from "../redux/actions/actions";
 
-const Calendar = () => {
+const Calendar = ({callPopUp}) => {
 
   const {dateList, currentMonth} = useSelector(state => state);
   const dispatch = useDispatch();
@@ -24,15 +24,6 @@ const Calendar = () => {
     "October",
     "November",
     "December",
-  ];
-  const nameOfDay = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
   ];
 
   const renderDay = (date) => {
@@ -102,6 +93,7 @@ const Calendar = () => {
 
   const addDateToEventList = (date) => {
     dispatch(addDateToList(date));
+    callPopUp(true, date);
   };
 
 
@@ -109,13 +101,11 @@ const Calendar = () => {
     const dateCopy = new Date(currentMonth);
     if (value === "left") {
       dateCopy.setMonth(dateCopy.getMonth()-1);
-      dispatch(updateCurrentMonth(dateCopy));
     }
-
     if (value === "right"){
       dateCopy.setMonth(dateCopy.getMonth()+1);
-      dispatch(updateCurrentMonth(dateCopy));
     }
+    dispatch(updateCurrentMonth(dateCopy));
   }
 
 
