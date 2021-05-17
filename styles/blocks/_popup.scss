@@ -1,12 +1,12 @@
 .popup-container{
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
+  height: -webkit-fill-available;
   background: #27282978;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 
   .popup {
     position: relative;

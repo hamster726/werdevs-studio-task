@@ -4,11 +4,13 @@
 
   padding: 50px 110px;
   &__logo {
+    width: 165px;
+    height: 50px;
   }
 
   .navigation {
     margin-left: auto;
-    a {
+    &__link {
       position: relative;
       font-size: 28px;
       font-weight: 500;
@@ -27,8 +29,11 @@
     display: block;
     content: "";
 
-    width: 14px;
-    height: 14px;
+    width: 2.5vw;
+    height: 2.5vw;
+    max-width: 14px;
+    max-height: 14px;
+
 
     background-color: $yellow-color;
     bottom: -14px;

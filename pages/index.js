@@ -86,7 +86,7 @@ const Home = () => {
           <Calendar callPopUp={callPopUp}/>
         </div>
       </main>
-      {isShownPopUp ? renderPopUp(new Date()): ''}
+      {isShownPopUp ? renderPopUp(popUpDate): ''}
     </MainLayout>
   );
 };

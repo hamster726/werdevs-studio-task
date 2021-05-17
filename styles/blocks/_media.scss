@@ -1,0 +1,76 @@
+@media screen and (max-width: 1089px) {
+
+
+  .main {
+    flex-direction: column;
+    &__text-container {
+      width: initial;
+      margin: 10vw auto;
+    }
+    &__title, &__description {
+      text-align: center;
+    }
+  }
+  .calendar__container {
+    width: 100%;
+    padding-top: 90px;
+    padding-bottom: 80px;
+    min-width: 400px;
+    .calendar {
+      min-width: 320px;
+      max-width: 500px;
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0;
+
+    .navigation {
+      margin-left: initial;
+      display: flex;
+      justify-content: space-around;
+      width: 70%;
+      flex-wrap: wrap;
+
+      &__link {
+        font-size: 5vw;
+        margin-top: 30px;
+        margin-left: 10px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  .main {
+    &__title {
+      font-size: 6.5vw;
+      line-height: 7vw;
+    }
+    &__description {
+      font-size: 3.5vw;
+      line-height: 4vw;
+
+    }
+  }
+  .about {
+    &__title {
+      text-align: center;
+      line-height: 45px;
+    }
+  }
+  .popup-container{
+    .popup {
+      flex-direction: column;
+      width: 70%;
+      max-width: 280px;
+      height: initial;
+    }
+  }
+
+
+}

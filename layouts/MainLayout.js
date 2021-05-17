@@ -17,8 +17,8 @@ const MainLayout = ({children, title= 'WerDevs Studio Calendar', page}) => {
           <Image className="header__img" src="/img/werdevs-logo.png" alt="logo" width="165" height="50"/> {/* what happened with svg logo? */}
         </div>
         <nav className="navigation">
-          <Link href={"/"}><a className="navigation___link">Home</a></Link>
-          <Link href={"/about"}><a className={`navigation___link ${page === "about" ? "active" : ""}`}>About us</a></Link>
+          <Link href={"/"}><a className="navigation__link">Home</a></Link>
+          <Link href={"/about"}><a className={`navigation__link ${page === "about" ? "active" : ""}`}>About us</a></Link>
         </nav>
       </header>
         {children}
