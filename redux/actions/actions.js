@@ -1,7 +1,4 @@
-import {
-  ADD_DATE_TO_LIST,
-  UPDATE_CURRENT_MONTH
-} from "../types";
+import { ADD_DATE_TO_LIST, UPDATE_CURRENT_MONTH } from "../types";
 
 const addDateToList = (date) => {
   return {
@@ -17,7 +14,4 @@ const updateCurrentMonth = (date) => {
   };
 };
 
-export {
-  addDateToList,
-  updateCurrentMonth
-};
+export { addDateToList, updateCurrentMonth };

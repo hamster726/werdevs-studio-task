@@ -3,7 +3,6 @@ import Calendar from "../components/Calendar";
 import { useState } from "react";
 
 const Home = () => {
-
   const nameOfDay = [
     "Sunday",
     "Monday",
@@ -30,12 +29,12 @@ const Home = () => {
   ];
 
   const [isShownPopUp, setPopUpShown] = useState(false);
-  const [popUpDate, setPopUpDate] = useState(new Date())
+  const [popUpDate, setPopUpDate] = useState(new Date());
 
   const callPopUp = (bool, date) => {
-    setPopUpShown(bool)
+    setPopUpShown(bool);
     setPopUpDate(date);
-  }
+  };
 
   const renderPopUp = (date) => {
     return (
@@ -62,7 +61,9 @@ const Home = () => {
           <div
             className="popup__close-button"
             onClick={() => setPopUpShown(false)}
-          >×</div>
+          >
+            ×
+          </div>
         </div>
       </div>
     );
@@ -83,10 +84,10 @@ const Home = () => {
           </div>
         </div>
         <div className="calendar__container">
-          <Calendar callPopUp={callPopUp}/>
+          <Calendar callPopUp={callPopUp} />
         </div>
       </main>
-      {isShownPopUp ? renderPopUp(popUpDate): ''}
+      {isShownPopUp ? renderPopUp(popUpDate) : ""}
     </MainLayout>
   );
 };

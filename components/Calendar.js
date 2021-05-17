@@ -1,15 +1,9 @@
-import {useState} from "react";
-import {useDispatch, useSelector} from "react-redux";
-import {addDateToList, updateCurrentMonth} from "../redux/actions/actions";
+import { useDispatch, useSelector } from "react-redux";
+import { addDateToList, updateCurrentMonth } from "../redux/actions/actions";
 
-const Calendar = ({callPopUp}) => {
-
-  const {dateList, currentMonth} = useSelector(state => state);
+const Calendar = ({ callPopUp }) => {
+  const { dateList, currentMonth } = useSelector((state) => state);
   const dispatch = useDispatch();
-
-  console.log(dateList);
-
-  const dayInMonth = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
   const nameOfMonth = [
     "January",
@@ -40,7 +34,13 @@ const Calendar = ({callPopUp}) => {
       isCurrentDay = true;
     }
 
-    const classnames = `${isCurrentMonth ? "calendar__day calendar__day-current-week" : "calendar__day calendar__day-non-current-week"} ${isCurrentDay ? "calendar__day-active" : ""} ${dayInList ? "calendar__day-in-list" : ""}`
+    const classnames = `${
+      isCurrentMonth
+        ? "calendar__day calendar__day-current-week"
+        : "calendar__day calendar__day-non-current-week"
+    } ${isCurrentDay ? "calendar__day-active" : ""} ${
+      dayInList ? "calendar__day-in-list" : ""
+    }`;
 
     return (
       <div
@@ -48,7 +48,7 @@ const Calendar = ({callPopUp}) => {
         className={classnames}
         onClick={() => addDateToEventList(date)}
       >
-        {date.getDate()}
+        {("0" + date.getDate()).slice(-2)}
       </div>
     );
   };
@@ -56,23 +56,18 @@ const Calendar = ({callPopUp}) => {
   const renderWeek = (daysArray, id) => {
     let daysArrayCopy = daysArray.slice();
     return (
-      <div
-        key={`week-${id}`}
-        className="calendar__week">
+      <div key={`week-${id}`} className="calendar__week">
         {daysArrayCopy.map((date) => {
-        return renderDay(date)})}
-    </div>)
+          return renderDay(date);
+        })}
+      </div>
+    );
   };
 
   const renderMonth = (date) => {
-    const curDay = date.getDate(); // сегодняшний день
-    const currMonth = new Date(curDay);
+    date.getDate(); // сегодняшний день
     date.setDate(1); // обнуляем до 1го числа
     const startDay = date.getDay(); // неделя начинается с
-    const daysTotal =
-      !(date.getFullYear() % 4) && date.getMonth() === 1
-        ? 29
-        : dayInMonth[date.getMonth()]; // сколько дней в месяце
 
     const daysArray = Array(35);
 
@@ -90,39 +85,45 @@ const Calendar = ({callPopUp}) => {
     return renderedMonth;
   };
 
-
   const addDateToEventList = (date) => {
     dispatch(addDateToList(date));
     callPopUp(true, date);
   };
 
-
   const changeMonth = (value) => {
     const dateCopy = new Date(currentMonth);
     if (value === "left") {
-      dateCopy.setMonth(dateCopy.getMonth()-1);
+      dateCopy.setMonth(dateCopy.getMonth() - 1);
     }
-    if (value === "right"){
-      dateCopy.setMonth(dateCopy.getMonth()+1);
+    if (value === "right") {
+      dateCopy.setMonth(dateCopy.getMonth() + 1);
     }
     dispatch(updateCurrentMonth(dateCopy));
-  }
-
-
+  };
 
   return (
     <>
       <div className="calendar">
         <div className="calendar__nav">
-          <div className="calendar__left-arrow" onClick={() => {changeMonth("left")}}/>
-          <div className="calendar__month">{`${nameOfMonth[currentMonth.getMonth()]} ${currentMonth.getFullYear()}`}</div>
-          <div className="calendar__right-arrow" onClick={() => {changeMonth("right")}}/>
+          <div
+            className="calendar__left-arrow"
+            onClick={() => {
+              changeMonth("left");
+            }}
+          />
+          <div className="calendar__month">{`${
+            nameOfMonth[currentMonth.getMonth()]
+          } ${currentMonth.getFullYear()}`}</div>
+          <div
+            className="calendar__right-arrow"
+            onClick={() => {
+              changeMonth("right");
+            }}
+          />
         </div>
-        <div className="separator"/>
-        <div className="calendar__grid">
-          {renderMonth(currentMonth)}
-        </div>
-        <div className="separator"/>
+        <div className="separator" />
+        <div className="calendar__grid">{renderMonth(currentMonth)}</div>
+        <div className="separator" />
         <div className="calendar__day-names">
           <span className="calendar__day-name">S</span>
           <span className="calendar__day-name">M</span>
@@ -132,7 +133,7 @@ const Calendar = ({callPopUp}) => {
           <span className="calendar__day-name">F</span>
           <span className="calendar__day-name">S</span>
         </div>
-        <div className="separator"/>
+        <div className="separator" />
       </div>
     </>
   );

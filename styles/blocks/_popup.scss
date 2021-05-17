@@ -1,8 +1,8 @@
-.popup-container{
+.popup-container {
   position: fixed;
   width: 100vw;
   height: 100vh;
-  height: -webkit-fill-available;
+  height: -webkit-fill-available; // для мобильных устройств
   background: #27282978;
   display: flex;
   justify-content: center;
@@ -23,6 +23,7 @@
       flex-direction: column;
 
     }
+
     &__label {
       font-size: 20px;
       letter-spacing: -0.4px;
@@ -41,9 +42,10 @@
       letter-spacing: 0.66px;
       color: $about-color;
     }
+
     &__close-button {
       position: absolute;
-      top:0;
+      top: 0;
       right: 0;
       background: #FDD000;
       width: 28px;
