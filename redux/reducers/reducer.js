@@ -1,59 +1,40 @@
-import {
-  GET_ALL_POSTS,
-  GET_POST,
-  CREATE_NEW_POST,
-  UPDATE_POST,
-  DELETE_POST,
-  UPDATE_COMMENTS,
-  CREATE_COMMENT,
-  IS_LOADED,
-} from "../types";
+import { ADD_DATE_TO_LIST, UPDATE_CURRENT_MONTH } from "../types";
 
 const initialState = {
-  posts: [],
-  comments: [],
-  isLoaded: true,
-  currentPost: undefined,
+  dateList: [],
+  currentMonth: new Date(),
 };
 
 const reducer = (state = initialState, action) => {
   switch (action.type) {
-    case GET_ALL_POSTS: {
-      return {
-        ...state,
-        posts: action.payload,
-      };
-    }
-    case GET_POST: {
-      return {
-        ...state,
-        currentPost: action.payload,
-      };
-    }
-    case CREATE_NEW_POST: {
-    }
-    case UPDATE_POST: {
-    }
-    case DELETE_POST: {
-    }
-    case UPDATE_COMMENTS: {
-      return {
-        ...state,
-        comments: action.payload,
-      };
-    }
-    case CREATE_COMMENT: {
-    }
+    case ADD_DATE_TO_LIST: {
+      let dateListCopy = state.dateList.slice();
 
-    case IS_LOADED: {
+      if (dateListCopy.includes(action.payload.getTime())) {
+        dateListCopy = dateListCopy.filter(
+          (item) => item !== action.payload.getTime()
+        );
+
+        return {
+          ...state,
+          dateList: dateListCopy,
+        };
+      } else {
+        dateListCopy.push(action.payload.getTime());
+      }
+
       return {
         ...state,
-        isLoaded: action.payload,
+        dateList: dateListCopy,
       };
     }
-
+    case UPDATE_CURRENT_MONTH: {
+      return {
+        ...state,
+        currentMonth: action.payload,
+      };
+    }
     default:
-      console.log("default dispatch", action);
       return state;
   }
 };

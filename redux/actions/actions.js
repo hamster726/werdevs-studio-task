@@ -1,78 +1,23 @@
 import {
-  GET_ALL_POSTS,
-  GET_POST,
-  CREATE_NEW_POST,
-  UPDATE_POST,
-  DELETE_POST,
-  UPDATE_COMMENTS,
-  CREATE_COMMENT,
-  IS_LOADED,
+  ADD_DATE_TO_LIST,
+  UPDATE_CURRENT_MONTH
 } from "../types";
 
-const getAllPosts = (posts) => {
+const addDateToList = (date) => {
   return {
-    type: GET_ALL_POSTS,
-    payload: posts,
+    type: ADD_DATE_TO_LIST,
+    payload: date,
   };
 };
 
-const getPost = (post) => {
+const updateCurrentMonth = (date) => {
   return {
-    type: GET_POST,
-    payload: post,
+    type: UPDATE_CURRENT_MONTH,
+    payload: date,
   };
 };
-
-const createNewPost = (data) => {
-  return {
-    type: CREATE_NEW_POST,
-    payload: data,
-  };
-};
-
-const updatePost = (data) => {
-  return {
-    type: UPDATE_POST,
-    payload: data,
-  };
-};
-
-const deletePost = (postId) => {
-  return {
-    type: DELETE_POST,
-    payload: postId,
-  };
-};
-
-const updateComments = (comments) => {
-  return {
-    type: UPDATE_COMMENTS,
-    payload: comments,
-  };
-};
-
-const createComment = (postId) => {
-  return {
-    type: CREATE_COMMENT,
-    payload: postId,
-  };
-};
-
-const isLoaded = (status) => {
-  return {
-    type: IS_LOADED,
-    payload: status,
-  };
-};
-
 
 export {
-  getAllPosts,
-  getPost,
-  createNewPost,
-  updatePost,
-  deletePost,
-  updateComments,
-  createComment,
-  isLoaded,
+  addDateToList,
+  updateCurrentMonth
 };

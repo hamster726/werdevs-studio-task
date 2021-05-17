@@ -65,13 +65,51 @@
     }
 
     &__day {
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
       width: 52px;
       height: 52px;
-      background-color: $yellow-color;
+      cursor: pointer;
+      font-size: 17px;
+      font-weight: 500;
+      line-height: 20px;
+      text-align: center;
+      color: $text-color;
+
+      &:hover {
+        background-color: #FDD00050;
+      }
+
+      &-non-current-week {
+        opacity: 0.24 ;
+      }
+      &-active {
+        background-color: $yellow-color;
+        color: $about-color;
+        &:hover {
+          background-color: $yellow-color;
+        }
+        &:after {
+          background-color: $about-color!important;
+        }
+      }
+      &-in-list {
+        &:after {
+          position: absolute;
+          content: "";
+          bottom: 5px;
+          left: 50%;
+          transform: translate(-40%);
+          width: 6px;
+          height: 6px;
+          border-radius: 100%;
+          background-color: $yellow-color;
+        }
+      }
     }
+
 
 
     .separator {

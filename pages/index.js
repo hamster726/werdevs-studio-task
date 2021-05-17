@@ -3,6 +3,18 @@ import Calendar from "../components/Calendar";
 
 const Home = () => {
 
+  const showPopUp = () => {
+
+    return (
+      <div className="popup-container">
+        <div className="popup">
+
+        </div>
+      </div>
+    )
+  }
+
+
   return (
     <MainLayout>
       <main className="main">
