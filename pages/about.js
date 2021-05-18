@@ -2,14 +2,14 @@ import MainLayout from "../layouts/MainLayout";
 
 const About = () => {
   return (
-    <MainLayout page={"about"}>
+    <MainLayout titlr={"About us - WerDevs"} page={"about"}>
       <div className="about">
         <h1 className="about__title">Lorem ipsum creation timelines</h1>
         <p className="about__description">
           So how did the classical Latin become so incoherent? According to
           McClintock, a 15th century typesetter likely scrambled part of
           Cicero's De Finibus in order to provide placeholder text to mockup
-          various fonts for a type specimen book.{" "}
+          various fonts for a type specimen book.
         </p>
         <p className="about__description">
           It's difficult to find examples of lorem ipsum in use before Letraset
@@ -26,7 +26,7 @@ const About = () => {
           in use far before the age of Letraset.
         </p>
         <p className="about__description">
-          McClintock wrote to Before & After to explain his discovery; <br />{" "}
+          McClintock wrote to Before & After to explain his discovery; <br />
           “What I find remarkable is that this text has been the industry's
           standard dummy text ever since some printer in the 1500s took a galley
           of type and scrambled it to make a type specimen book; it has survived
