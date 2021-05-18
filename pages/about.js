@@ -2,7 +2,7 @@ import MainLayout from "../layouts/MainLayout";
 
 const About = () => {
   return (
-    <MainLayout titlr={"About us - WerDevs"} page={"about"}>
+    <MainLayout title={"About us - WerDevs"} page={"about"}>
       <div className="about">
         <h1 className="about__title">Lorem ipsum creation timelines</h1>
         <p className="about__description">
