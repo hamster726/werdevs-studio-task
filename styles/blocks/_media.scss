@@ -20,11 +20,6 @@
     padding-top: 90px;
     padding-bottom: 80px;
     min-width: 400px;
-
-    .calendar {
-      min-width: 320px;
-      max-width: 500px;
-    }
   }
 
 }
@@ -61,9 +56,17 @@
     &__description {
       font-size: 3.5vw;
       line-height: 4vw;
-
     }
   }
+
+  .calendar__container {
+    min-width: 320px;
+    .calendar {
+      min-width: 320px;
+      max-width: 500px;
+    }
+  }
+
   .about {
     &__title {
       text-align: center;
@@ -81,3 +84,19 @@
 
 
 }
+
+@media screen and (max-width: 596px) {
+  .main {
+    &__title {
+      font-size: 9.5vw;
+      line-height: 9.5vw;
+    }
+
+    &__description {
+      font-size: 5.5vw;
+      line-height: 6vw;
+    }
+  }
+}
+
+
